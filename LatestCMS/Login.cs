@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LatestCMS
 {
@@ -47,7 +49,6 @@ namespace LatestCMS
                             {
                                 string role = reader["Role"].ToString();
                                 MessageBox.Show($"Login successful! Welcome, {role}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                                 // Navigate to the main dashboard based on role
                                 NavigateToDashboard(role);
                             }
@@ -60,7 +61,7 @@ namespace LatestCMS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

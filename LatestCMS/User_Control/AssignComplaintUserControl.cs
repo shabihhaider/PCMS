@@ -92,31 +92,34 @@ namespace LatestCMS.User_Control
                 return;
             }
 
-            var selectedComplaint = (KeyValuePair<int, string>)cboComplaints.SelectedItem;
-            var selectedOfficer = (KeyValuePair<int, string>)cboOfficers.SelectedItem;
-
             try
             {
-                string query = "UPDATE Complaints SET AssignedOfficerID = @OfficerID WHERE ComplaintID = @ComplaintID";
+                // Extract selected complaint and officer
+                var selectedComplaint = (KeyValuePair<int, string>)cboComplaints.SelectedItem;
+                var selectedOfficer = (KeyValuePair<int, string>)cboOfficers.SelectedItem;
 
-                using (SqlConnection conn = new SqlConnection("Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"))
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                // Initialize WCF client
+                using (var client = new ServiceReference1.Service1Client())
                 {
-                    cmd.Parameters.AddWithValue("@OfficerID", selectedOfficer.Key);
-                    cmd.Parameters.AddWithValue("@ComplaintID", selectedComplaint.Key);
+                    // Call the WCF service method
+                    bool isAssigned = client.AssignComplaint(selectedComplaint.Key, selectedOfficer.Key);
 
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    MessageBox.Show("Complaint successfully assigned!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadComplaints(); // Refresh the complaints list
+                    if (isAssigned)
+                    {
+                        MessageBox.Show("Complaint assigned successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadComplaints();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to assign complaint.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Assignment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
