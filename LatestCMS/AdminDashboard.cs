@@ -68,5 +68,17 @@ namespace LatestCMS
             panel2.Controls.Add(assignComplaint);
             assignComplaint.Dock = DockStyle.Fill;
         }
+
+        private void btnManageUsers_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.Teal;
+        }
+
+        private void btnManageUsers_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+        }
     }
 }

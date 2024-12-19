@@ -155,5 +155,52 @@ namespace LatestCMS
             //    MessageBox.Show("You can register only by Admin. If you already have an account. Please, Login!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegister_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnRegister_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

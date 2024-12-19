@@ -96,5 +96,10 @@ namespace LatestCMS.User_Control
 
             return true;
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+        }
     }
 }

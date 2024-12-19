@@ -177,7 +177,7 @@ namespace LatestCMS.User_Control
 
         private void ManageUserControl_Load(object sender, EventArgs e)
         {
-
+            LoadComplaints();
         }
 
 
@@ -231,15 +231,22 @@ namespace LatestCMS.User_Control
                 string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Complaints SET Status = @Status, DateResolved = CASE WHEN @Status = 'Resolved' THEN GETDATE() ELSE NULL END WHERE ComplaintID = @ComplaintID";
+                    string query = "UPDATE Complaints SET ComplaintTitle = @ComplaintTitle, ComplaintType = @ComplaintType, Description = @Description, ContactName = @ContactName, Phone = @Phone, Email = @Email, Status = @Status, DateResolved = CASE WHEN @Status = 'Resolved' THEN GETDATE() ELSE NULL END WHERE ComplaintID = @ComplaintID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@ComplaintTitle", txtComplaintTitle.Text);
+                        cmd.Parameters.AddWithValue("@ComplaintType", cboComplaintType.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@ContactName", txtContactName.Text);
+                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                         cmd.Parameters.AddWithValue("@Status", cboStatus.SelectedItem.ToString());
                         cmd.Parameters.AddWithValue("@ComplaintID", Convert.ToInt32(dgvComplaints.CurrentRow.Cells["ComplaintID"].Value));
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
+                        conn.Close();
 
                         MessageBox.Show("Complaint updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadComplaints();  // Refresh DataGridView
@@ -268,7 +275,7 @@ namespace LatestCMS.User_Control
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadComplaints();  // Reload the complaints list
+            ClearFields();  // Reload the complaints list
         }
 
     }

@@ -114,13 +114,20 @@
             // 
             // btnManageUsers
             // 
-            btnManageUsers.Location = new Point(19, 18);
+            btnManageUsers.BackColor = Color.DarkCyan;
+            btnManageUsers.FlatStyle = FlatStyle.Flat;
+            btnManageUsers.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManageUsers.ForeColor = Color.White;
+            btnManageUsers.Location = new Point(11, 22);
             btnManageUsers.Name = "btnManageUsers";
-            btnManageUsers.Size = new Size(117, 29);
+            btnManageUsers.Padding = new Padding(2);
+            btnManageUsers.Size = new Size(130, 41);
             btnManageUsers.TabIndex = 0;
             btnManageUsers.Text = "Manage Users";
-            btnManageUsers.UseVisualStyleBackColor = true;
+            btnManageUsers.UseVisualStyleBackColor = false;
             btnManageUsers.Click += btnManageUsers_Click;
+            btnManageUsers.MouseEnter += btnManageUsers_MouseEnter;
+            btnManageUsers.MouseLeave += btnManageUsers_MouseLeave;
             // 
             // panel2
             // 

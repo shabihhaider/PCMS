@@ -34,13 +34,17 @@
             txtUsername = new TextBox();
             label5 = new Label();
             label3 = new Label();
-            label1 = new Label();
             chkShowPassword = new CheckBox();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(308, 248);
+            btnClear.Location = new Point(333, 264);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 33;
@@ -50,7 +54,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(173, 248);
+            btnLogin.Location = new Point(198, 264);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(94, 29);
             btnLogin.TabIndex = 32;
@@ -60,7 +64,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(308, 157);
+            txtPassword.Location = new Point(272, 157);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(278, 27);
@@ -68,7 +72,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(308, 112);
+            txtUsername.Location = new Point(272, 112);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(278, 27);
             txtUsername.TabIndex = 25;
@@ -76,7 +80,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(173, 112);
+            label5.Location = new Point(137, 112);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 24;
@@ -85,25 +89,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(173, 160);
+            label3.Location = new Point(137, 160);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 20;
             label3.Text = "Password";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(259, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(79, 20);
-            label1.TabIndex = 17;
-            label1.Text = "User Login";
-            // 
             // chkShowPassword
             // 
             chkShowPassword.AutoSize = true;
-            chkShowPassword.Location = new Point(308, 206);
+            chkShowPassword.Location = new Point(272, 206);
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.Size = new Size(132, 24);
             chkShowPassword.TabIndex = 34;
@@ -111,11 +106,45 @@
             chkShowPassword.UseVisualStyleBackColor = true;
             chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Teal;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(631, 72);
+            panel1.TabIndex = 35;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Police_Complaint_Management_Logo_removebg_preview;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(74, 71);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(198, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(242, 38);
+            label2.TabIndex = 0;
+            label2.Text = "User Registration";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(660, 385);
+            ClientSize = new Size(631, 315);
+            Controls.Add(panel1);
             Controls.Add(chkShowPassword);
             Controls.Add(btnClear);
             Controls.Add(btnLogin);
@@ -123,10 +152,12 @@
             Controls.Add(txtUsername);
             Controls.Add(label5);
             Controls.Add(label3);
-            Controls.Add(label1);
             Name = "Login";
             Text = "Login";
             Load += Login_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,7 +170,9 @@
         private TextBox txtUsername;
         private Label label5;
         private Label label3;
-        private Label label1;
         private CheckBox chkShowPassword;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

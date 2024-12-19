@@ -22,7 +22,8 @@ namespace LatestCMS.User_Control
 
         private void AssignComplaintUserControl_Load(object sender, EventArgs e)
         {
-
+            LoadComplaints();
+            LoadOfficers();
         }
 
         private void LoadComplaints()

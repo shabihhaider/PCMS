@@ -33,10 +33,6 @@
             lblContactName = new Label();
             lblDescription = new Label();
             lblComplaintType = new Label();
-            cboStatus = new ComboBox();
-            lblResponse = new Label();
-            lblStatus = new Label();
-            txtResponse = new TextBox();
             lblIncidentDate = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
@@ -93,40 +89,6 @@
             lblComplaintType.TabIndex = 92;
             lblComplaintType.Text = "Complaint Type";
             // 
-            // cboStatus
-            // 
-            cboStatus.FormattingEnabled = true;
-            cboStatus.Items.AddRange(new object[] { "Pending", "In Progress", "Resolved" });
-            cboStatus.Location = new Point(181, 352);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Size = new Size(151, 28);
-            cboStatus.TabIndex = 91;
-            // 
-            // lblResponse
-            // 
-            lblResponse.AutoSize = true;
-            lblResponse.Location = new Point(46, 403);
-            lblResponse.Name = "lblResponse";
-            lblResponse.Size = new Size(72, 20);
-            lblResponse.TabIndex = 90;
-            lblResponse.Text = "Response";
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(46, 355);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(101, 20);
-            lblStatus.TabIndex = 89;
-            lblStatus.Text = "Current Status";
-            // 
-            // txtResponse
-            // 
-            txtResponse.Location = new Point(181, 403);
-            txtResponse.Name = "txtResponse";
-            txtResponse.Size = new Size(278, 27);
-            txtResponse.TabIndex = 88;
-            // 
             // lblIncidentDate
             // 
             lblIncidentDate.AutoSize = true;
@@ -170,16 +132,17 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(289, 467);
+            btnRefresh.Location = new Point(235, 366);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(97, 29);
             btnRefresh.TabIndex = 81;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(142, 467);
+            btnSubmit.Location = new Point(88, 366);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(113, 29);
             btnSubmit.TabIndex = 80;
@@ -226,10 +189,6 @@
             Controls.Add(lblContactName);
             Controls.Add(lblDescription);
             Controls.Add(lblComplaintType);
-            Controls.Add(cboStatus);
-            Controls.Add(lblResponse);
-            Controls.Add(lblStatus);
-            Controls.Add(txtResponse);
             Controls.Add(lblIncidentDate);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
@@ -242,7 +201,7 @@
             Controls.Add(txtComplaintTitle);
             Controls.Add(lblComplaintTitle);
             Name = "EnterComplaintUserControl";
-            Size = new Size(502, 558);
+            Size = new Size(485, 424);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,10 +213,6 @@
         private Label lblContactName;
         private Label lblDescription;
         private Label lblComplaintType;
-        private ComboBox cboStatus;
-        private Label lblResponse;
-        private Label lblStatus;
-        private TextBox txtResponse;
         private Label lblIncidentDate;
         private TextBox txtEmail;
         private Label lblEmail;

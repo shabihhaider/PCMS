@@ -47,15 +47,15 @@
             lblContactName = new Label();
             dtpIncidentDate = new DateTimePicker();
             cboComplaintType = new ComboBox();
-            dgvComplaints = new DataGridView();
             dateTimePicker2 = new DateTimePicker();
             label2 = new Label();
+            dgvComplaints = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvComplaints).BeginInit();
             SuspendLayout();
             // 
             // btnUpdateUser
             // 
-            btnUpdateUser.Location = new Point(193, 549);
+            btnUpdateUser.Location = new Point(183, 533);
             btnUpdateUser.Name = "btnUpdateUser";
             btnUpdateUser.Size = new Size(113, 29);
             btnUpdateUser.TabIndex = 33;
@@ -65,21 +65,21 @@
             // 
             // txtContactName
             // 
-            txtContactName.Location = new Point(159, 246);
+            txtContactName.Location = new Point(149, 230);
             txtContactName.Name = "txtContactName";
             txtContactName.Size = new Size(278, 27);
             txtContactName.TabIndex = 23;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(159, 196);
+            txtDescription.Location = new Point(149, 180);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(278, 27);
             txtDescription.TabIndex = 21;
             // 
             // txtComplaintTitle
             // 
-            txtComplaintTitle.Location = new Point(159, 98);
+            txtComplaintTitle.Location = new Point(149, 82);
             txtComplaintTitle.Name = "txtComplaintTitle";
             txtComplaintTitle.Size = new Size(278, 27);
             txtComplaintTitle.TabIndex = 19;
@@ -87,7 +87,7 @@
             // lblComplaintTitle
             // 
             lblComplaintTitle.AutoSize = true;
-            lblComplaintTitle.Location = new Point(24, 98);
+            lblComplaintTitle.Location = new Point(14, 82);
             lblComplaintTitle.Name = "lblComplaintTitle";
             lblComplaintTitle.Size = new Size(111, 20);
             lblComplaintTitle.TabIndex = 18;
@@ -95,7 +95,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(340, 549);
+            btnClear.Location = new Point(330, 533);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(97, 29);
             btnClear.TabIndex = 35;
@@ -115,7 +115,7 @@
             // lblIncidentDate
             // 
             lblIncidentDate.AutoSize = true;
-            lblIncidentDate.Location = new Point(24, 390);
+            lblIncidentDate.Location = new Point(14, 374);
             lblIncidentDate.Name = "lblIncidentDate";
             lblIncidentDate.Size = new Size(98, 20);
             lblIncidentDate.TabIndex = 43;
@@ -123,7 +123,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(159, 342);
+            txtEmail.Location = new Point(149, 326);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(278, 27);
             txtEmail.TabIndex = 42;
@@ -131,7 +131,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(24, 342);
+            lblEmail.Location = new Point(14, 326);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(46, 20);
             lblEmail.TabIndex = 41;
@@ -139,7 +139,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(159, 292);
+            txtPhone.Location = new Point(149, 276);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(278, 27);
             txtPhone.TabIndex = 38;
@@ -147,7 +147,7 @@
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(24, 292);
+            lblPhone.Location = new Point(14, 276);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(50, 20);
             lblPhone.TabIndex = 37;
@@ -156,7 +156,7 @@
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(24, 439);
+            lblStatus.Location = new Point(14, 423);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(101, 20);
             lblStatus.TabIndex = 45;
@@ -166,7 +166,7 @@
             // 
             cboStatus.FormattingEnabled = true;
             cboStatus.Items.AddRange(new object[] { "Pending", "In Progress", "Resolved" });
-            cboStatus.Location = new Point(159, 436);
+            cboStatus.Location = new Point(149, 420);
             cboStatus.Name = "cboStatus";
             cboStatus.Size = new Size(151, 28);
             cboStatus.TabIndex = 48;
@@ -174,7 +174,7 @@
             // lblComplaintType
             // 
             lblComplaintType.AutoSize = true;
-            lblComplaintType.Location = new Point(24, 151);
+            lblComplaintType.Location = new Point(14, 135);
             lblComplaintType.Name = "lblComplaintType";
             lblComplaintType.Size = new Size(113, 20);
             lblComplaintType.TabIndex = 49;
@@ -183,7 +183,7 @@
             // lblDescription
             // 
             lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(24, 196);
+            lblDescription.Location = new Point(14, 180);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(85, 20);
             lblDescription.TabIndex = 50;
@@ -192,7 +192,7 @@
             // lblContactName
             // 
             lblContactName.AutoSize = true;
-            lblContactName.Location = new Point(24, 246);
+            lblContactName.Location = new Point(14, 230);
             lblContactName.Name = "lblContactName";
             lblContactName.Size = new Size(104, 20);
             lblContactName.TabIndex = 51;
@@ -200,7 +200,7 @@
             // 
             // dtpIncidentDate
             // 
-            dtpIncidentDate.Location = new Point(159, 392);
+            dtpIncidentDate.Location = new Point(149, 376);
             dtpIncidentDate.Name = "dtpIncidentDate";
             dtpIncidentDate.Size = new Size(250, 27);
             dtpIncidentDate.TabIndex = 77;
@@ -209,24 +209,14 @@
             // 
             cboComplaintType.FormattingEnabled = true;
             cboComplaintType.Items.AddRange(new object[] { "Theft", "Harassment", "Property Dispute", "Missing Person" });
-            cboComplaintType.Location = new Point(159, 151);
+            cboComplaintType.Location = new Point(149, 135);
             cboComplaintType.Name = "cboComplaintType";
             cboComplaintType.Size = new Size(151, 28);
             cboComplaintType.TabIndex = 76;
             // 
-            // dgvComplaints
-            // 
-            dgvComplaints.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvComplaints.Location = new Point(482, 98);
-            dgvComplaints.Name = "dgvComplaints";
-            dgvComplaints.RowHeadersWidth = 51;
-            dgvComplaints.Size = new Size(317, 271);
-            dgvComplaints.TabIndex = 36;
-            dgvComplaints.CellClick += dgvComplaints_CellClick;
-            // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(159, 486);
+            dateTimePicker2.Location = new Point(149, 470);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 27);
             dateTimePicker2.TabIndex = 79;
@@ -234,11 +224,21 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 486);
+            label2.Location = new Point(14, 470);
             label2.Name = "label2";
             label2.Size = new Size(77, 20);
             label2.TabIndex = 78;
             label2.Text = "Date Filed";
+            // 
+            // dgvComplaints
+            // 
+            dgvComplaints.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvComplaints.Location = new Point(451, 135);
+            dgvComplaints.Name = "dgvComplaints";
+            dgvComplaints.RowHeadersWidth = 51;
+            dgvComplaints.Size = new Size(317, 271);
+            dgvComplaints.TabIndex = 36;
+            dgvComplaints.CellClick += dgvComplaints_CellClick;
             // 
             // ManageUserControl
             // 
@@ -299,8 +299,8 @@
         private Label lblContactName;
         private DateTimePicker dtpIncidentDate;
         private ComboBox cboComplaintType;
-        private DataGridView dgvComplaints;
         private DateTimePicker dateTimePicker2;
         private Label label2;
+        private DataGridView dgvComplaints;
     }
 }

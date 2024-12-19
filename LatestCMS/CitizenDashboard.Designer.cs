@@ -50,7 +50,7 @@
             // 
             panel1.Location = new Point(164, 50);
             panel1.Name = "panel1";
-            panel1.Size = new Size(696, 501);
+            panel1.Size = new Size(760, 501);
             panel1.TabIndex = 53;
             // 
             // panel2
@@ -97,7 +97,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(872, 563);
+            ClientSize = new Size(936, 563);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);

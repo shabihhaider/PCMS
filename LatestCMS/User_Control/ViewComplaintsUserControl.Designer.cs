@@ -38,7 +38,7 @@
             dataGridView1.Location = new Point(14, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(784, 449);
+            dataGridView1.Size = new Size(651, 438);
             dataGridView1.TabIndex = 0;
             // 
             // ViewComplaintsUserControl
@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(dataGridView1);
             Name = "ViewComplaintsUserControl";
-            Size = new Size(813, 549);
+            Size = new Size(709, 510);
             Load += ViewComplaintsUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

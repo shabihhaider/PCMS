@@ -46,21 +46,28 @@
             btnRegister = new Button();
             btnClear = new Button();
             btnLogin = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(287, 9);
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(271, 18);
             label1.Name = "label1";
-            label1.Size = new Size(122, 20);
+            label1.Size = new Size(242, 38);
             label1.TabIndex = 0;
             label1.Text = "User Registration";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(152, 95);
+            label2.Location = new Point(159, 110);
             label2.Name = "label2";
             label2.Size = new Size(76, 20);
             label2.TabIndex = 1;
@@ -68,22 +75,22 @@
             // 
             // txtFullName
             // 
-            txtFullName.Location = new Point(287, 95);
+            txtFullName.Location = new Point(391, 107);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(278, 27);
+            txtFullName.Size = new Size(231, 27);
             txtFullName.TabIndex = 2;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(287, 277);
+            txtEmail.Location = new Point(391, 186);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(278, 27);
+            txtEmail.Size = new Size(231, 27);
             txtEmail.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(152, 193);
+            label3.Location = new Point(160, 267);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 3;
@@ -91,15 +98,15 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(287, 315);
+            txtPhone.Location = new Point(389, 229);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(278, 27);
+            txtPhone.Size = new Size(233, 27);
             txtPhone.TabIndex = 6;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(152, 236);
+            label4.Location = new Point(159, 311);
             label4.Name = "label4";
             label4.Size = new Size(127, 20);
             label4.TabIndex = 5;
@@ -107,15 +114,15 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(287, 145);
+            txtUsername.Location = new Point(391, 148);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(278, 27);
+            txtUsername.Size = new Size(231, 27);
             txtUsername.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(152, 145);
+            label5.Location = new Point(160, 148);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 7;
@@ -124,7 +131,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(152, 277);
+            label6.Location = new Point(160, 186);
             label6.Name = "label6";
             label6.Size = new Size(46, 20);
             label6.TabIndex = 9;
@@ -133,7 +140,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(152, 315);
+            label7.Location = new Point(160, 229);
             label7.Name = "label7";
             label7.Size = new Size(50, 20);
             label7.TabIndex = 10;
@@ -142,7 +149,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(152, 365);
+            label8.Location = new Point(159, 358);
             label8.Name = "label8";
             label8.Size = new Size(39, 20);
             label8.TabIndex = 11;
@@ -150,27 +157,27 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(287, 190);
+            txtPassword.Location = new Point(389, 267);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(278, 27);
+            txtPassword.Size = new Size(233, 27);
             txtPassword.TabIndex = 12;
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(287, 233);
+            txtConfirmPassword.Location = new Point(387, 311);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
-            txtConfirmPassword.Size = new Size(278, 27);
+            txtConfirmPassword.Size = new Size(235, 27);
             txtConfirmPassword.TabIndex = 13;
             // 
             // cboRole
             // 
             cboRole.FormattingEnabled = true;
             cboRole.Items.AddRange(new object[] { "Admin", "Police Officer", "Citizen" });
-            cboRole.Location = new Point(287, 362);
+            cboRole.Location = new Point(389, 358);
             cboRole.Name = "cboRole";
-            cboRole.Size = new Size(151, 28);
+            cboRole.Size = new Size(233, 28);
             cboRole.TabIndex = 14;
             cboRole.Click += cboRole_Click;
             cboRole.KeyPress += cboRole_KeyPress;
@@ -179,39 +186,72 @@
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(152, 440);
+            btnRegister.BackColor = SystemColors.Window;
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Location = new Point(160, 439);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(94, 29);
+            btnRegister.Size = new Size(130, 43);
             btnRegister.TabIndex = 15;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
+            btnRegister.MouseEnter += btnRegister_MouseEnter;
+            btnRegister.MouseLeave += btnRegister_MouseLeave;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(287, 440);
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Location = new Point(322, 439);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(94, 29);
+            btnClear.Size = new Size(131, 43);
             btnClear.TabIndex = 16;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.MouseEnter += btnClear_MouseEnter;
+            btnClear.MouseLeave += btnClear_MouseLeave;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(407, 440);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(485, 439);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(132, 29);
+            btnLogin.Size = new Size(150, 43);
             btnLogin.TabIndex = 17;
             btnLogin.Text = "Already Register";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
+            btnLogin.MouseEnter += btnLogin_MouseEnter;
+            btnLogin.MouseLeave += btnLogin_MouseLeave;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Teal;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 71);
+            panel1.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Police_Complaint_Management_Logo_removebg_preview;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(74, 71);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(714, 512);
+            BackColor = Color.White;
+            ClientSize = new Size(800, 512);
+            Controls.Add(panel1);
             Controls.Add(btnLogin);
             Controls.Add(btnClear);
             Controls.Add(btnRegister);
@@ -229,9 +269,12 @@
             Controls.Add(label3);
             Controls.Add(txtFullName);
             Controls.Add(label2);
-            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -256,5 +299,7 @@
         private Button btnRegister;
         private Button btnClear;
         private Button btnLogin;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

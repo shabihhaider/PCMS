@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace LatestCMS.User_Control
 
         private void ManagePoliceOfficerUserControl_Load(object sender, EventArgs e)
         {
-
+            LoadOfficers();
         }
 
         private void LoadOfficers()
@@ -53,36 +54,32 @@ namespace LatestCMS.User_Control
                 return;
             }
 
-            int officerID = Convert.ToInt32(dgvOfficers.SelectedRows[0].Cells["OfficerID"].Value);
-            string officerName = dgvOfficers.SelectedRows[0].Cells["OfficerName"].Value.ToString();
-            string rank = dgvOfficers.SelectedRows[0].Cells["Rank"].Value.ToString();
-            string contactNo = dgvOfficers.SelectedRows[0].Cells["ContactNo"].Value.ToString();
-            string email = dgvOfficers.SelectedRows[0].Cells["Email"].Value.ToString();
-
-            string query = "UPDATE PoliceOfficers SET OfficerName = @OfficerName, Rank = @Rank, ContactNo = @ContactNo, Email = @Email WHERE OfficerID = @OfficerID";
-
             try
             {
-                using (SqlConnection conn = new SqlConnection("Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"))
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@OfficerName", officerName);
-                    cmd.Parameters.AddWithValue("@Rank", rank);
-                    cmd.Parameters.AddWithValue("@ContactNo", contactNo);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@OfficerID", officerID);
+                    string query = "UPDATE PoliceOfficers SET Rank = @Rank, BadgeNo = @BadgeNo, ContactNo = @ContactNo, Email = @Email WHERE OfficerID = @OfficerID";
 
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Rank", txtRank.Text);
+                        cmd.Parameters.AddWithValue("@BadgeNo", txtBadgeNo.Text);
+                        cmd.Parameters.AddWithValue("@ContactNo", txtContactNo.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("@OfficerID", Convert.ToInt32(dgvOfficers.CurrentRow.Cells["OfficerID"].Value));
 
-                    MessageBox.Show("Police officer details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadOfficers();
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Complaint updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadOfficers();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -121,6 +118,19 @@ namespace LatestCMS.User_Control
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void dgvOfficers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvOfficers.CurrentRow != null)
+            {
+                DataGridViewRow row = dgvOfficers.Rows[e.RowIndex];
+
+                txtRank.Text = row.Cells["Rank"].Value?.ToString() ?? string.Empty;
+                txtBadgeNo.Text = row.Cells["BadgeNo"].Value?.ToString() ?? string.Empty;
+                txtContactNo.Text = row.Cells["ContactNo"].Value?.ToString() ?? string.Empty;
+                txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? string.Empty;
             }
         }
     }
