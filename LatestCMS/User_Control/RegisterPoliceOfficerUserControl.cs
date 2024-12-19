@@ -10,6 +10,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LatestCMS.User_Control
 {
@@ -33,34 +35,26 @@ namespace LatestCMS.User_Control
                     return;
                 }
 
-                string query = "INSERT INTO PoliceOfficers (OfficerName, Rank, BadgeNo, ContactNo, Email, Username, PasswordHash) " +
-                               "VALUES (@Name, @Rank, @BadgeNo, @ContactNo, @Email, @Username, @PasswordHash)";
-
-                using (SqlConnection conn = new SqlConnection("Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"))
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                // Initialize WCF client
+                using (var client = new ServiceReference1.Service1Client())
                 {
-                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                    cmd.Parameters.AddWithValue("@Rank", txtRank.Text);
-                    cmd.Parameters.AddWithValue("@BadgeNo", txtBadgeNo.Text);
-                    cmd.Parameters.AddWithValue("@ContactNo", txtContactNo.Text);
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                    // Call the WCF service method
+                    bool isAssigned = client.RegisterPoliceOfficer(txtName.Text, txtRank.Text, txtBadgeNo.Text, txtContactNo.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text);
 
-                    // Hashing the password
-                    string passwordHash = HashPassword(txtPassword.Text);
-                    cmd.Parameters.AddWithValue("@PasswordHash", passwordHash);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    MessageBox.Show("Police Officer registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearRegistrationFields();
+                    if (isAssigned)
+                    {
+                        MessageBox.Show("Officer added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearRegistrationFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to Register Officer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

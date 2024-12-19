@@ -21,6 +21,12 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AssignComplaint", ReplyAction="http://tempuri.org/IService1/AssignComplaintResponse")]
         System.Threading.Tasks.Task<bool> AssignComplaintAsync(int complaintID, int officerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPoliceOfficer", ReplyAction="http://tempuri.org/IService1/RegisterPoliceOfficerResponse")]
+        bool RegisterPoliceOfficer(string officerName, string rank, string badgeNo, string contactNo, string email, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPoliceOfficer", ReplyAction="http://tempuri.org/IService1/RegisterPoliceOfficerResponse")]
+        System.Threading.Tasks.Task<bool> RegisterPoliceOfficerAsync(string officerName, string rank, string badgeNo, string contactNo, string email, string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
@@ -81,6 +87,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<bool> AssignComplaintAsync(int complaintID, int officerID)
         {
             return base.Channel.AssignComplaintAsync(complaintID, officerID);
+        }
+        
+        public bool RegisterPoliceOfficer(string officerName, string rank, string badgeNo, string contactNo, string email, string username, string password)
+        {
+            return base.Channel.RegisterPoliceOfficer(officerName, rank, badgeNo, contactNo, email, username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterPoliceOfficerAsync(string officerName, string rank, string badgeNo, string contactNo, string email, string username, string password)
+        {
+            return base.Channel.RegisterPoliceOfficerAsync(officerName, rank, badgeNo, contactNo, email, username, password);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

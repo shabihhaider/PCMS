@@ -22,6 +22,9 @@ namespace WcfService1
         // TODO: Add your service operations here
         [OperationContract]
         bool AssignComplaint(int complaintID, int officerID);
+
+        [OperationContract]
+        bool RegisterPoliceOfficer(string officerName, string rank, string badgeNo, string contactNo, string email, string username, string password);
     }
 
 
