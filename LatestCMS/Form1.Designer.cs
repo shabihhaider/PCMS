@@ -67,117 +67,144 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label2.Location = new Point(159, 110);
             label2.Name = "label2";
-            label2.Size = new Size(76, 20);
+            label2.Size = new Size(88, 23);
             label2.TabIndex = 1;
             label2.Text = "Full Name";
             // 
             // txtFullName
             // 
+            txtFullName.BackColor = Color.White;
+            txtFullName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFullName.Location = new Point(391, 107);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(231, 27);
+            txtFullName.Size = new Size(250, 34);
             txtFullName.TabIndex = 2;
+            txtFullName.Enter += txtConfirmPassword_Enter;
             // 
             // txtEmail
             // 
+            txtEmail.BackColor = Color.White;
+            txtEmail.Font = new Font("Segoe UI", 12F);
             txtEmail.Location = new Point(391, 186);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(231, 27);
+            txtEmail.Size = new Size(250, 34);
             txtEmail.TabIndex = 4;
+            txtEmail.Enter += txtConfirmPassword_Enter;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label3.Location = new Point(160, 267);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
+            label3.Size = new Size(82, 23);
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
             // txtPhone
             // 
+            txtPhone.BackColor = Color.White;
+            txtPhone.Font = new Font("Segoe UI", 12F);
             txtPhone.Location = new Point(389, 229);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(233, 27);
+            txtPhone.Size = new Size(250, 34);
             txtPhone.TabIndex = 6;
+            txtPhone.Enter += txtConfirmPassword_Enter;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label4.Location = new Point(159, 311);
             label4.Name = "label4";
-            label4.Size = new Size(127, 20);
+            label4.Size = new Size(149, 23);
             label4.TabIndex = 5;
             label4.Text = "Confirm Password";
             // 
             // txtUsername
             // 
+            txtUsername.BackColor = Color.White;
+            txtUsername.Font = new Font("Segoe UI", 12F);
             txtUsername.Location = new Point(391, 148);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(231, 27);
+            txtUsername.Size = new Size(250, 34);
             txtUsername.TabIndex = 8;
+            txtUsername.Enter += txtConfirmPassword_Enter;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label5.Location = new Point(160, 148);
             label5.Name = "label5";
-            label5.Size = new Size(75, 20);
+            label5.Size = new Size(87, 23);
             label5.TabIndex = 7;
             label5.Text = "Username";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label6.Location = new Point(160, 186);
             label6.Name = "label6";
-            label6.Size = new Size(46, 20);
+            label6.Size = new Size(51, 23);
             label6.TabIndex = 9;
             label6.Text = "Email";
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label7.Location = new Point(160, 229);
             label7.Name = "label7";
-            label7.Size = new Size(50, 20);
+            label7.Size = new Size(59, 23);
             label7.TabIndex = 10;
             label7.Text = "Phone";
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label8.Location = new Point(159, 358);
             label8.Name = "label8";
-            label8.Size = new Size(39, 20);
+            label8.Size = new Size(44, 23);
             label8.TabIndex = 11;
             label8.Text = "Role";
             // 
             // txtPassword
             // 
+            txtPassword.BackColor = Color.White;
+            txtPassword.Font = new Font("Segoe UI", 12F);
             txtPassword.Location = new Point(389, 267);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(233, 27);
+            txtPassword.Size = new Size(250, 34);
             txtPassword.TabIndex = 12;
+            txtPassword.Enter += txtConfirmPassword_Enter;
             // 
             // txtConfirmPassword
             // 
+            txtConfirmPassword.BackColor = Color.White;
+            txtConfirmPassword.Font = new Font("Segoe UI", 12F);
             txtConfirmPassword.Location = new Point(387, 311);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
-            txtConfirmPassword.Size = new Size(235, 27);
+            txtConfirmPassword.Size = new Size(250, 34);
             txtConfirmPassword.TabIndex = 13;
+            txtConfirmPassword.Enter += txtConfirmPassword_Enter;
             // 
             // cboRole
             // 
+            cboRole.BackColor = Color.White;
+            cboRole.Font = new Font("Segoe UI", 12F);
             cboRole.FormattingEnabled = true;
             cboRole.Items.AddRange(new object[] { "Admin", "Police Officer", "Citizen" });
             cboRole.Location = new Point(389, 358);
             cboRole.Name = "cboRole";
-            cboRole.Size = new Size(233, 28);
+            cboRole.Size = new Size(250, 36);
             cboRole.TabIndex = 14;
             cboRole.Click += cboRole_Click;
             cboRole.KeyPress += cboRole_KeyPress;
@@ -188,6 +215,7 @@
             // 
             btnRegister.BackColor = SystemColors.Window;
             btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnRegister.Location = new Point(160, 439);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(130, 43);
@@ -201,6 +229,7 @@
             // btnClear
             // 
             btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnClear.Location = new Point(322, 439);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(131, 43);
@@ -214,6 +243,7 @@
             // btnLogin
             // 
             btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnLogin.Location = new Point(485, 439);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(150, 43);

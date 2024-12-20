@@ -81,5 +81,25 @@ namespace LatestCMS
         {
             txtPassword.PasswordChar = chkShowPassword.Checked ? '\0' : '*';
         }
+
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

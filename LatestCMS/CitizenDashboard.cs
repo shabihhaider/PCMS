@@ -14,19 +14,22 @@ namespace LatestCMS
 {
     public partial class CitizenDashboard : Form
     {
-        User_Control.EnterComplaintUserControl enterComplaint = new User_Control.EnterComplaintUserControl();
-        User_Control.ViewComplaintsUserControl viewComplaints = new User_Control.ViewComplaintsUserControl();
+        public Session session1 = new Session();
+        
         User_Control.TrackComplaintUserControl trackComplaint = new User_Control.TrackComplaintUserControl();
-        public CitizenDashboard()
+
+
+        public CitizenDashboard(Session session)
         {
             InitializeComponent();
             panel1.Controls.Clear();
-            panel1.Controls.Add(enterComplaint);
-            enterComplaint.Dock = DockStyle.Fill;
+            panel1.Controls.Add(trackComplaint);
+            trackComplaint.Dock = DockStyle.Fill;
+
+            session1 = session;
         }
 
-
-
+        
         private void CitizenDashboard_Load(object sender, EventArgs e)
         {
 
@@ -34,6 +37,7 @@ namespace LatestCMS
 
         private void btnFileComplaint_Click(object sender, EventArgs e)
         {
+            User_Control.EnterComplaintUserControl enterComplaint = new User_Control.EnterComplaintUserControl(session1);
             panel1.Controls.Clear();
             panel1.Controls.Add(enterComplaint);
             enterComplaint.Dock = DockStyle.Fill;
@@ -41,9 +45,10 @@ namespace LatestCMS
 
         private void btnViewComplaints_Click(object sender, EventArgs e)
         {
+            User_Control.ViewUserOwnComplaintUserControl userOwnComplaint = new User_Control.ViewUserOwnComplaintUserControl(session1);
             panel1.Controls.Clear();
-            panel1.Controls.Add(viewComplaints);
-            viewComplaints.Dock = DockStyle.Fill;
+            panel1.Controls.Add(userOwnComplaint);
+            userOwnComplaint.Dock = DockStyle.Fill;
         }
 
         private void btnTrackComplaint_Click(object sender, EventArgs e)
@@ -51,6 +56,18 @@ namespace LatestCMS
             panel1.Controls.Clear();
             panel1.Controls.Add(trackComplaint);
             trackComplaint.Dock = DockStyle.Fill;
+        }
+
+        private void btnViewComplaints_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.Teal;
+        }
+
+        private void btnFileComplaint_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
         }
     }
 }

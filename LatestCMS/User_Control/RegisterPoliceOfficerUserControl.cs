@@ -82,5 +82,19 @@ namespace LatestCMS.User_Control
         {
 
         }
+
+        private void btnRegisterOfficer_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnRegisterOfficer_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

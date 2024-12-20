@@ -1,6 +1,6 @@
 ﻿namespace LatestCMS.User_Control
 {
-    partial class ViewComplaintsUserControl
+    partial class ViewUserOwnComplaintUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,21 +35,20 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 83);
+            dataGridView1.Location = new Point(23, 54);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(680, 389);
+            dataGridView1.Size = new Size(640, 390);
             dataGridView1.TabIndex = 0;
             // 
-            // ViewComplaintsUserControl
+            // ViewUserOwnComplaintUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             Controls.Add(dataGridView1);
-            Name = "ViewComplaintsUserControl";
-            Size = new Size(709, 510);
-            Load += ViewComplaintsUserControl_Load;
+            Name = "ViewUserOwnComplaintUserControl";
+            Size = new Size(691, 475);
+            Load += ViewUserOwnComplaintUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

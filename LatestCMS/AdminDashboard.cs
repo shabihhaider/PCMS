@@ -71,14 +71,39 @@ namespace LatestCMS
 
         private void btnManageUsers_MouseEnter(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            button.BackColor = Color.Teal;
+            hoverEffectEnter(sender);
         }
 
         private void btnManageUsers_MouseLeave(object sender, EventArgs e)
         {
+            hoverEffectLeave(sender);
+        }
+
+        public void hoverEffectEnter(object sender)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.Teal;
+        }
+
+        public void hoverEffectLeave(object sender)
+        {
             Button button = sender as Button;
             button.BackColor = Color.DarkCyan;
+        }
+
+        private void btnViewComplaints_MouseEnter(object sender, EventArgs e)
+        {
+            hoverEffectEnter(sender);
+        }
+
+        private void btnViewComplaints_MouseLeave(object sender, EventArgs e)
+        {
+            hoverEffectLeave(sender);
+        }
+
+        private void btnGenerateReports_MouseLeave(object sender, EventArgs e)
+        {
+            hoverEffectLeave(sender);
         }
     }
 }

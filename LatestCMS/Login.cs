@@ -16,6 +16,7 @@ namespace LatestCMS
 {
     public partial class Login : Form
     {
+        public Session session = new Session();
         public Login()
         {
             InitializeComponent();
@@ -32,10 +33,10 @@ namespace LatestCMS
             {
                 try
                 {
-                    string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+                    string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=SELab;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False";
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
-                        string query = "SELECT Role FROM Users WHERE Username = @Username AND PasswordHash = @PasswordHash";
+                        string query = "SELECT Role, UserID FROM Users WHERE Username = @Username AND PasswordHash = @PasswordHash";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -48,9 +49,17 @@ namespace LatestCMS
                             if (reader.Read())
                             {
                                 string role = reader["Role"].ToString();
+                                string userID = reader["UserID"].ToString();
+
+                                // Store user information in session
+                                session.Username = txtUsername.Text;
+                                session.Role = role;
+                                session.UserID = userID;
+
                                 MessageBox.Show($"Login successful! Welcome, {role}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                 // Navigate to the main dashboard based on role
-                                NavigateToDashboard(role);
+                                NavigateToDashboard(session);
                             }
                             else
                             {
@@ -65,6 +74,7 @@ namespace LatestCMS
                 }
             }
         }
+
         private bool ValidateLoginForm()
         {
             if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
@@ -95,11 +105,11 @@ namespace LatestCMS
             txtPassword.PasswordChar = chkShowPassword.Checked ? '\0' : '*';
         }
 
-        private void NavigateToDashboard(string role)
+        private void NavigateToDashboard(Session session)
         {
 
             // Open the appropriate dashboard based on role
-            switch (role)
+            switch (session.Role)
             {
                 case "Admin":
                     new AdminDashboard().Show();
@@ -108,12 +118,39 @@ namespace LatestCMS
                 //    new PoliceOfficerDashboard(PoliceID).Show();
                 //    break;
                 case "Citizen":
-                    new CitizenDashboard().Show();
+                    new CitizenDashboard(session).Show();
                     break;
             }
 
-           // this.Hide(); // Close the login form
+            // this.Hide(); // Close the login form
         }
 
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

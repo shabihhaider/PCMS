@@ -202,5 +202,10 @@ namespace LatestCMS
             button.BackColor = Color.White;
             button.ForeColor = Color.Black;
         }
+
+        private void txtConfirmPassword_Enter(object sender, EventArgs e)
+        {
+            txtFullName.ForeColor = Color.Black;
+        }
     }
 }

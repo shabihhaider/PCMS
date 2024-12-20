@@ -278,5 +278,18 @@ namespace LatestCMS.User_Control
             ClearFields();  // Reload the complaints list
         }
 
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

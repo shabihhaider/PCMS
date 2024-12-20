@@ -44,146 +44,182 @@
             txtDescription = new TextBox();
             txtComplaintTitle = new TextBox();
             lblComplaintTitle = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // dtpIncidentDate
             // 
-            dtpIncidentDate.Location = new Point(181, 306);
+            dtpIncidentDate.Font = new Font("Segoe UI", 10.2F);
+            dtpIncidentDate.Location = new Point(244, 376);
             dtpIncidentDate.Name = "dtpIncidentDate";
-            dtpIncidentDate.Size = new Size(250, 27);
+            dtpIncidentDate.Size = new Size(278, 30);
             dtpIncidentDate.TabIndex = 96;
             // 
             // cboComplaintType
             // 
+            cboComplaintType.Font = new Font("Segoe UI", 10.2F);
             cboComplaintType.FormattingEnabled = true;
             cboComplaintType.Items.AddRange(new object[] { "Theft", "Harassment", "Property Dispute", "Missing Person" });
-            cboComplaintType.Location = new Point(181, 64);
+            cboComplaintType.Location = new Point(244, 134);
             cboComplaintType.Name = "cboComplaintType";
-            cboComplaintType.Size = new Size(151, 28);
+            cboComplaintType.Size = new Size(151, 31);
             cboComplaintType.TabIndex = 95;
             // 
             // lblContactName
             // 
             lblContactName.AutoSize = true;
-            lblContactName.Location = new Point(46, 162);
+            lblContactName.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblContactName.Location = new Point(109, 232);
             lblContactName.Name = "lblContactName";
-            lblContactName.Size = new Size(104, 20);
+            lblContactName.Size = new Size(121, 23);
             lblContactName.TabIndex = 94;
             lblContactName.Text = "Contact Name";
             // 
             // lblDescription
             // 
             lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(46, 112);
+            lblDescription.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblDescription.Location = new Point(109, 182);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(85, 20);
+            lblDescription.Size = new Size(96, 23);
             lblDescription.TabIndex = 93;
             lblDescription.Text = "Description";
             // 
             // lblComplaintType
             // 
             lblComplaintType.AutoSize = true;
-            lblComplaintType.Location = new Point(46, 67);
+            lblComplaintType.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblComplaintType.Location = new Point(109, 137);
             lblComplaintType.Name = "lblComplaintType";
-            lblComplaintType.Size = new Size(113, 20);
+            lblComplaintType.Size = new Size(130, 23);
             lblComplaintType.TabIndex = 92;
             lblComplaintType.Text = "Complaint Type";
             // 
             // lblIncidentDate
             // 
             lblIncidentDate.AutoSize = true;
-            lblIncidentDate.Location = new Point(46, 306);
+            lblIncidentDate.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblIncidentDate.Location = new Point(109, 376);
             lblIncidentDate.Name = "lblIncidentDate";
-            lblIncidentDate.Size = new Size(98, 20);
+            lblIncidentDate.Size = new Size(113, 23);
             lblIncidentDate.TabIndex = 87;
             lblIncidentDate.Text = "Incident Date";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(181, 258);
+            txtEmail.Font = new Font("Segoe UI", 10.2F);
+            txtEmail.Location = new Point(244, 328);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(278, 27);
+            txtEmail.Size = new Size(278, 30);
             txtEmail.TabIndex = 86;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(46, 258);
+            lblEmail.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblEmail.Location = new Point(109, 328);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
+            lblEmail.Size = new Size(51, 23);
             lblEmail.TabIndex = 85;
             lblEmail.Text = "Email";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(181, 208);
+            txtPhone.Font = new Font("Segoe UI", 10.2F);
+            txtPhone.Location = new Point(244, 278);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(278, 27);
+            txtPhone.Size = new Size(278, 30);
             txtPhone.TabIndex = 84;
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(46, 208);
+            lblPhone.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblPhone.Location = new Point(109, 278);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(50, 20);
+            lblPhone.Size = new Size(59, 23);
             lblPhone.TabIndex = 83;
             lblPhone.Text = "Phone";
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(235, 366);
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnRefresh.Location = new Point(333, 443);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(97, 29);
             btnRefresh.TabIndex = 81;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
             btnRefresh.Click += btnRefresh_Click;
+            btnRefresh.MouseEnter += btnSubmit_MouseEnter;
+            btnRefresh.MouseLeave += btnSubmit_MouseLeave;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(88, 366);
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnSubmit.Location = new Point(186, 443);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(113, 29);
             btnSubmit.TabIndex = 80;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
             btnSubmit.Click += btnSubmit_Click;
+            btnSubmit.MouseEnter += btnSubmit_MouseEnter;
+            btnSubmit.MouseLeave += btnSubmit_MouseLeave;
             // 
             // txtContactName
             // 
-            txtContactName.Location = new Point(181, 162);
+            txtContactName.Font = new Font("Segoe UI", 10.2F);
+            txtContactName.Location = new Point(244, 232);
             txtContactName.Name = "txtContactName";
-            txtContactName.Size = new Size(278, 27);
+            txtContactName.Size = new Size(278, 30);
             txtContactName.TabIndex = 79;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(181, 112);
+            txtDescription.Font = new Font("Segoe UI", 10.2F);
+            txtDescription.Location = new Point(244, 182);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(278, 27);
+            txtDescription.Size = new Size(278, 30);
             txtDescription.TabIndex = 78;
             // 
             // txtComplaintTitle
             // 
-            txtComplaintTitle.Location = new Point(181, 14);
+            txtComplaintTitle.Font = new Font("Segoe UI", 10.2F);
+            txtComplaintTitle.Location = new Point(244, 84);
             txtComplaintTitle.Name = "txtComplaintTitle";
-            txtComplaintTitle.Size = new Size(278, 27);
+            txtComplaintTitle.Size = new Size(278, 30);
             txtComplaintTitle.TabIndex = 77;
             // 
             // lblComplaintTitle
             // 
             lblComplaintTitle.AutoSize = true;
-            lblComplaintTitle.Location = new Point(46, 14);
+            lblComplaintTitle.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            lblComplaintTitle.Location = new Point(109, 84);
             lblComplaintTitle.Name = "lblComplaintTitle";
-            lblComplaintTitle.Size = new Size(111, 20);
+            lblComplaintTitle.Size = new Size(126, 23);
             lblComplaintTitle.TabIndex = 76;
             lblComplaintTitle.Text = "Complaint Title";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(208, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(162, 24);
+            label1.TabIndex = 97;
+            label1.Text = "Enter Complaint";
             // 
             // EnterComplaintUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(label1);
             Controls.Add(dtpIncidentDate);
             Controls.Add(cboComplaintType);
             Controls.Add(lblContactName);
@@ -201,7 +237,8 @@
             Controls.Add(txtComplaintTitle);
             Controls.Add(lblComplaintTitle);
             Name = "EnterComplaintUserControl";
-            Size = new Size(485, 424);
+            Size = new Size(610, 505);
+            Load += EnterComplaintUserControl_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +261,6 @@
         private TextBox txtDescription;
         private TextBox txtComplaintTitle;
         private Label lblComplaintTitle;
+        private Label label1;
     }
 }

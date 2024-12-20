@@ -133,5 +133,24 @@ namespace LatestCMS.User_Control
                 txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? string.Empty;
             }
         }
+
+        private void btnUpdate_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnUpdate_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void dgvOfficers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

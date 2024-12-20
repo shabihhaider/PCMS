@@ -152,5 +152,19 @@ namespace LatestCMS.User_Control
             dtpEndDate.Value = DateTime.Now;
             cboStatusFilter.Items.AddRange(new string[] { "Pending", "Resolved", "In Progress" });
         }
+
+        private void btnGenerateReport_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnGenerateReport_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
     }
 }

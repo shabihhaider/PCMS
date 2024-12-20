@@ -14,9 +14,11 @@ namespace LatestCMS.User_Control
 {
     public partial class EnterComplaintUserControl : UserControl
     {
-        public EnterComplaintUserControl()
+        public Session session1 = new Session();
+        public EnterComplaintUserControl(Session session)
         {
             InitializeComponent();
+            session1 = session;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -29,9 +31,9 @@ namespace LatestCMS.User_Control
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
                         string query = "INSERT INTO Complaints (ComplaintTitle, ComplaintType, Description, " +
-                                       "ContactName, Phone, Email, IncidentDate) " +
+                                       "ContactName, Phone, Email, IncidentDate, UserID) " +
                                        "VALUES (@ComplaintTitle, @ComplaintType, @Description, @ContactName, " +
-                                       "@Phone, @Email, @IncidentDate)";
+                                       "@Phone, @Email, @IncidentDate, @UserID)";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -42,6 +44,7 @@ namespace LatestCMS.User_Control
                             cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                             cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                             cmd.Parameters.AddWithValue("@IncidentDate", dtpIncidentDate.Value.Date);
+                            cmd.Parameters.AddWithValue("@UserID", session1.UserID);
 
                             conn.Open();
                             cmd.ExecuteNonQuery();
@@ -100,6 +103,25 @@ namespace LatestCMS.User_Control
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ClearForm();
+        }
+
+        private void btnSubmit_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.DarkCyan;
+            button.ForeColor = Color.White;
+        }
+
+        private void btnSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void EnterComplaintUserControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
